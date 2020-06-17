@@ -1,0 +1,143 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-primary" role="alert">
+                <span>Would you like to create a blue nile account and this information</span>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Yes">
+                    <label class="form-check-label" for="inlineRadio2">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="No">
+                    <label class="form-check-label" for="inlineRadio3">No</label>
+                </div>
+            </div>
+        </div>
+
+        <ng-container [formGroup]="formulario">
+
+            <div class="col-6">
+                <label for="">First Name*</label>
+                <input type="text" name="" id="" class="form-control" [ngClass]="{'is-valid': !ValidarForm('firstName').error, 'is-invalid': ValidarForm('firstName').error}" formControlName="firstName">
+                <div *ngIf="ValidarForm('firstName').error" class="invalid-feedback d-block">
+                    {{ValidarForm('firstName').message}}
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Address*</label>
+                <input type="text" name="" id="" class="form-control" formControlName="address" [ngClass]="{'is-valid': !ValidarForm('address').error, 'is-invalid': ValidarForm('address').error}">
+                <div *ngIf="ValidarForm('address').error" class="invalid-feedback d-block">
+                    {{ValidarForm('address').message}}
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Last Name*</label>
+                <input type="text" name="" id="" class="form-control" formControlName="lastName" [ngClass]="{'is-valid': !ValidarForm('lastName').error, 'is-invalid': ValidarForm('lastName').error}">
+                <div *ngIf="ValidarForm('lastName').error" class="invalid-feedback d-block">
+                    {{ValidarForm('lastName').message}}
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">City*</label>
+                <select name="" id="" class="form-control">
+                <option value="San Francisco">San Francisco</option>
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Tokio">Tokio</option>
+                <option value="Madrid">Madrid</option>
+                <option value="Lisboa">Lisboa</option>
+            </select>
+            </div>
+            <div class="col-6">
+                <label for="">Company</label>
+                <input type="text" name="" id="" class="form-control" formControlName="company" [ngClass]="{'is-valid': !ValidarForm('company').error, 'is-invalid': ValidarForm('company').error}">
+                <div *ngIf="ValidarForm('company').error" class="invalid-feedback d-block">
+                    {{ValidarForm('company').message}}
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">ZIP Code*</label>
+                <input type="text" name="" id="" class="form-control" formControlName="zipCode" [ngClass]="{'is-valid': !ValidarForm('zipCode').error, 'is-invalid': ValidarForm('zipCode').error}">
+                <div *ngIf="ValidarForm('zipCode').error" class="invalid-feedback d-block">
+                    {{ValidarForm('zipCode').message}}
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Telephone</label>
+                <div class="container p-0">
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="text" name="" id="" class="form-control" formControlName="phone" [ngClass]="{'is-valid': !ValidarForm('phone').error, 'is-invalid': ValidarForm('phone').error}">
+                            <small id="telHelp1" class="text-muted">Phone Number</small>
+                            <div *ngIf="ValidarForm('phone').error" class="invalid-feedback d-block">
+                                {{ValidarForm('phone').message}}
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <input type="text" name="" id="" class="form-control" formControlName="ext" [ngClass]="{'is-valid': !ValidarForm('ext').error, 'is-invalid': ValidarForm('ext').error}">
+                            <small id="telHelp2" class="text-muted">Ext</small>
+                            <div *ngIf="ValidarForm('ext').error" class="invalid-feedback d-block">
+                                {{ValidarForm('ext').message}}
+                            </div>
+                        </div>
+                        <div class="col-2 p-0"><span class="badge badge-primary">Int Number</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Country*</label>
+                <select name="" id="" class="form-control">
+                <option *ngFor="let country of countriesName" value="">{{country}}</option>
+            </select>
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Address Type</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Home">
+                    <label class="form-check-label" for="inlineRadio2">Home</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Bussiness">
+                    <label class="form-check-label" for="inlineRadio3">Bussiness</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Email*</label>
+                <input type="text" name="" id="" class="form-control" formControlName="email" [ngClass]="{'is-valid': !ValidarForm('email').error, 'is-invalid': ValidarForm('email').error}">
+                <div *ngIf="ValidarForm('email').error" class="invalid-feedback d-block">
+                    {{ValidarForm('email').message}}
+                </div>
+            </div>
+            <div class="col-6"></div>
+            <div class="col-6">
+                <label for="">Re-type Email*</label>
+                <input type="text" name="" id="" class="form-control" formControlName="repeatEmail" [ngClass]="{'is-valid': !ValidarForm('repeatEmail').error, 'is-invalid': ValidarForm('repeatEmail').error}">
+                <div *ngIf="ValidarForm('repeatEmail').error" class="invalid-feedback d-block">
+                    {{ValidarForm('repeatEmail').message}}
+                </div>
+                <small id="emailHelp" class="text-muted">Enter an email Address where can send a email confirming your order</small>
+            </div>
+            <div class="col-6"></div>
+            <div class="col-12">
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineRadio1">Are you shipping this order to your billing address?</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Yes">
+                    <label class="form-check-label" for="inlineRadio2">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="No">
+                    <label class="form-check-label" for="inlineRadio3">No</label>
+                </div>
+            </div>
+        </ng-container>
+        <div class="col-12 mt-3">
+            <button type="button" name="" id="" class="btn btn-outline-primary btn-block" (click)="MostrarFormulario()">Guardar</button>
+        </div>
+    </div>
+</div>
