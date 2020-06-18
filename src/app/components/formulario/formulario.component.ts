@@ -68,7 +68,9 @@ export class FormularioComponent implements OnInit {
       ]), 
       repeatEmail: new FormControl(null, [
         RxwebValidators.compare({fieldName: 'email'})
-      ])
+      ]),
+      country: new FormControl(null, RxwebValidators.required()),
+      addressType: new FormControl(null, RxwebValidators.required())
     })
   }
 
@@ -78,6 +80,7 @@ export class FormularioComponent implements OnInit {
   }
 
   public ValidarForm(control: string){
+    if (!this.formulario.controls[control].touched) return {error: undefined};
     return this.msgErrorSrv.messageError(
       this.formulario.controls[control].errors
     );
